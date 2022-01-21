@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/login_fragment">
+
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.example.marketplace.login.fragment.Login_fragment"
+        android:label="fragment_login_fragment"
+        tools:layout="@layout/fragment_login_fragment" >
+        <action
+            android:id="@+id/action_login_fragment_to_register_fragment"
+            app:destination="@id/register_fragment" />
+        <action
+            android:id="@+id/action_login_fragment_to_forgotpassword_fragment"
+            app:destination="@id/forgotpassword_fragment" />
+        <action
+            android:id="@+id/action_login_fragment_to_timeline_fragment"
+            app:destination="@id/timeline_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/register_fragment"
+        android:name="com.example.marketplace.register.fragment.Register_fragment"
+        android:label="fragment_register_fragment"
+        tools:layout="@layout/fragment_register_fragment" />
+    <fragment
+        android:id="@+id/forgotpassword_fragment"
+        android:name="com.example.marketplace.forgotpassword.fragment.Forgotpassword_fragment"
+        android:label="fragment_forgotpassword_fragment"
+        tools:layout="@layout/fragment_forgotpassword_fragment" />
+    <fragment
+        android:id="@+id/timeline_fragment"
+        android:name="com.example.marketplace.timeline.fragment.Timeline_fragment"
+        android:label="fragment_timeline_fragment"
+        tools:layout="@layout/fragment_timeline_fragment" />
+</navigation>
