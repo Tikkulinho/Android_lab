@@ -24,7 +24,11 @@
         android:id="@+id/register_fragment"
         android:name="com.example.marketplace.register.fragment.Register_fragment"
         android:label="fragment_register_fragment"
-        tools:layout="@layout/fragment_register_fragment" />
+        tools:layout="@layout/fragment_register_fragment" >
+        <action
+            android:id="@+id/action_register_fragment_to_login_fragment"
+            app:destination="@id/login_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/forgotpassword_fragment"
         android:name="com.example.marketplace.forgotpassword.fragment.Forgotpassword_fragment"
