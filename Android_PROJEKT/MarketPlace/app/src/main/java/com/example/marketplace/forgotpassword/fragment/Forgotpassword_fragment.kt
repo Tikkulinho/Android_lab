@@ -14,6 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.marketplace.R
 import com.example.marketplace.forgotpassword.viewmodel.ForgotPassword_ViewModel
+import com.example.marketplace.forgotpassword.viewmodel.ForgotPassword_ViewModelFactory
 import com.example.marketplace.register.viewmodel.Register_ViewModel
 import com.example.marketplace.register.viewmodel.Register_ViewModelFactory
 import com.example.marketplace.repository.Repository
@@ -24,7 +25,7 @@ class ForgotPassword_fragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val factory = Register_ViewModelFactory(Repository())
+        val factory = ForgotPassword_ViewModelFactory(Repository())
         forgotpasswordViewModel = ViewModelProvider(this, factory).get(ForgotPassword_ViewModel::class.java)
     }
 
@@ -49,8 +50,9 @@ class ForgotPassword_fragment : Fragment() {
             lifecycleScope.launch {
                 forgotpasswordViewModel.forgotpassword()
             }
-            Toast.makeText(activity?.applicationContext,"Send an email.", Toast.LENGTH_LONG)
-
+            val toast = Toast.makeText(activity?.applicationContext,"Email sent.", Toast.LENGTH_SHORT)
+            toast.show()
+            findNavController().navigate(R.id.action_forgotpassword_fragment_to_login_fragment)
         }
 
         return view

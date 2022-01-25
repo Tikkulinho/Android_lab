@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_timeline"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic_timeline_foreground"
+        android:title="Timeline"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_mymarket"
+        android:orderInCategory="2"
+        android:icon="@drawable/ic_shoppingcart"
+        android:title="My Market"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_myfare"
+        android:orderInCategory="3"
+        android:icon="@drawable/ic_fares"
+        android:title="My Fares"
+        app:showAsAction="always" />
+</menu>

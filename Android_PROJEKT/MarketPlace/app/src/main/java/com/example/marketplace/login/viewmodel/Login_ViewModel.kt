@@ -26,6 +26,7 @@ class Login_ViewModel(val repository: Repository) : ViewModel() {
             try {
                 val result = repository.login(request)
                 MyApplication.token = result.token
+                MyApplication.username = result.username
                 token.value = result.token
                 Log.d("xxx", "MyApplication - token:  ${MyApplication.token}")
             }catch(e: Exception){

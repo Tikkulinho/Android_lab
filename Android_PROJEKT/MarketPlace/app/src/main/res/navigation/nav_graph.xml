@@ -31,12 +31,21 @@
     </fragment>
     <fragment
         android:id="@+id/forgotpassword_fragment"
-        android:name="com.example.marketplace.forgotpassword.fragment.Forgotpassword_fragment"
+        android:name="com.example.marketplace.forgotpassword.fragment.ForgotPassword_fragment"
         android:label="fragment_forgotpassword_fragment"
-        tools:layout="@layout/fragment_forgotpassword_fragment" />
+        tools:layout="@layout/fragment_forgotpassword_fragment" >
+        <action
+            android:id="@+id/action_forgotpassword_fragment_to_login_fragment"
+            app:destination="@id/login_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/timeline_fragment"
         android:name="com.example.marketplace.timeline.fragment.Timeline_fragment"
         android:label="fragment_timeline_fragment"
         tools:layout="@layout/fragment_timeline_fragment" />
+    <fragment
+        android:id="@+id/mymarket_fragment"
+        android:name="com.example.marketplace.mymarket.fragment.mymarket_fragment"
+        android:label="fragment_mymarket_fragment"
+        tools:layout="@layout/fragment_mymarket_fragment" />
 </navigation>
