@@ -47,5 +47,13 @@
         android:id="@+id/mymarket_fragment"
         android:name="com.example.marketplace.mymarket.fragment.mymarket_fragment"
         android:label="fragment_mymarket_fragment"
-        tools:layout="@layout/fragment_mymarket_fragment" />
+        tools:layout="@layout/fragment_mymarket_fragment" >
+        <action
+            android:id="@+id/action_mymarket_fragment_to_addProduct_fragment"
+            app:destination="@id/addProduct_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProduct_fragment"
+        android:name="com.example.marketplace.addproduct.fragment.AddProduct_fragment"
+        android:label="AddProduct_fragment" />
 </navigation>

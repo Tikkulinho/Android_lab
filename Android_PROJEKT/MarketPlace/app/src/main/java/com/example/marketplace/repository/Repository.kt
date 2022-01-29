@@ -2,6 +2,7 @@ package com.example.marketplace.repository
 
 import android.util.Log
 import com.example.marketplace.API.Retrofit_instance
+import com.example.marketplace.addproduct.model.AddProductResponse
 import com.example.marketplace.forgotpassword.model.ForgotPasswordRequest
 import com.example.marketplace.forgotpassword.model.ForgotPasswordResponse
 import com.example.marketplace.login.model.LoginRequest
@@ -27,5 +28,12 @@ class Repository {
 
     suspend fun getProducts(token: String): ProductResponse {
         return Retrofit_instance.api.getProducts(token)
+    }
+
+    suspend fun addProduct(
+        token: String, title: String?, description: String?, price_per_unit: String?,
+        units: String?
+    ): AddProductResponse {
+        return Retrofit_instance.api.addProduct(token, title, description, price_per_unit, units)
     }
 }
