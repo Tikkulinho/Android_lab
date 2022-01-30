@@ -11,6 +11,7 @@ import kotlinx.coroutines.launch
 
 class Timeline_ViewModel (private val repository: Repository) : ViewModel() {
     var products: MutableLiveData<List<Model_Timeline>> = MutableLiveData()
+    var currentpos: Int = 0
 
     init{
         Log.d("xxx", "ListViewModel constructor - Token: ${MyApplication.token}")
@@ -28,5 +29,9 @@ class Timeline_ViewModel (private val repository: Repository) : ViewModel() {
                 Log.d("xxx", "ListViewMofdel exception: ${e.toString()}")
             }
         }
+    }
+
+    fun getProduct(): Model_Timeline{
+        return products.value!![currentpos]
     }
 }

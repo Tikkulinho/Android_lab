@@ -26,7 +26,7 @@
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
             card_view:layout_constraintVertical_bias="0.239"
-            card_view:srcCompat="@drawable/ic_launcher_foreground" />
+            card_view:srcCompat="@drawable/ic_launcher" />
 
         <TextView
             android:id="@+id/productNameTextViewSales"

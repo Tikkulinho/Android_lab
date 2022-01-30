@@ -42,7 +42,11 @@
         android:id="@+id/timeline_fragment"
         android:name="com.example.marketplace.timeline.fragment.Timeline_fragment"
         android:label="fragment_timeline_fragment"
-        tools:layout="@layout/fragment_timeline_fragment" />
+        tools:layout="@layout/fragment_timeline_fragment" >
+        <action
+            android:id="@+id/action_timeline_fragment_to_productdata_fragment"
+            app:destination="@id/productdata_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/mymarket_fragment"
         android:name="com.example.marketplace.mymarket.fragment.mymarket_fragment"
@@ -60,4 +64,9 @@
             android:id="@+id/action_addProduct_fragment_to_mymarket_fragment"
             app:destination="@id/mymarket_fragment" />
     </fragment>
+    <fragment
+        android:id="@+id/productdata_fragment"
+        android:name="com.example.marketplace.timeline.fragment.Productdata_fragment"
+        android:label="fragment_productdata_fragment"
+        tools:layout="@layout/fragment_productdata_fragment" />
 </navigation>
