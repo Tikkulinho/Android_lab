@@ -26,8 +26,8 @@ class Repository {
         return Retrofit_instance.api.forgotpassword(request)
     }
 
-    suspend fun getProducts(token: String): ProductResponse {
-        return Retrofit_instance.api.getProducts(token)
+    suspend fun getProducts(token: String, limit: Int): ProductResponse {
+        return Retrofit_instance.api.getProducts(token, limit)
     }
 
     suspend fun addProduct(

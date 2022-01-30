@@ -23,7 +23,7 @@ interface MarketAPI {
     suspend fun forgotpassword(@Body request: ForgotPasswordRequest): ForgotPasswordResponse
 
     @GET(Constants.GET_PRODUCT_URL)
-    suspend fun getProducts(@Header("token") token: String): ProductResponse
+    suspend fun getProducts(@Header("token") token: String, @Header("limit") limit: Int = 1000): ProductResponse
 
     @Multipart
     @POST(ADD_PRODUCT_URL)

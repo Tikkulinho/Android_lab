@@ -62,7 +62,7 @@ class AddProduct_fragment : Fragment() {
             }
             addViewModel.addProduct()
             listViewModel.getProducts()
-            findNavController().navigate(R.id.action_mymarket_fragment_to_addProduct_fragment)
+            findNavController().navigate(R.id.action_addProduct_fragment_to_mymarket_fragment)
         }
 
 

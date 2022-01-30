@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -46,6 +48,13 @@ class mymarket_fragment : Fragment() , mymarket_Adapter.OnItemClickListener, mym
             adapter.setData(myProducts)
             adapter.notifyDataSetChanged()
         }
+
+        val button = view.findViewById<View>(R.id.addButton)
+
+        button.setOnClickListener {
+            findNavController().navigate(R.id.action_mymarket_fragment_to_addProduct_fragment)
+        }
+
         return view
     }
 

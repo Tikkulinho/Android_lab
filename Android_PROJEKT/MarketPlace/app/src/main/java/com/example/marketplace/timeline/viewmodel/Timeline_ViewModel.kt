@@ -21,7 +21,7 @@ class Timeline_ViewModel (private val repository: Repository) : ViewModel() {
         viewModelScope.launch {
             try {
                 val result =
-                    repository.getProducts(MyApplication.token)
+                    repository.getProducts(MyApplication.token, MyApplication.limit)
                 products.value = result.products
                 Log.d("xxx", "ListViewModel - #products:  ${result.item_count}")
             }catch(e: Exception){
