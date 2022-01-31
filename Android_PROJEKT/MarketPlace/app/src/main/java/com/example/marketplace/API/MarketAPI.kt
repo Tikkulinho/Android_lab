@@ -9,9 +9,12 @@ import com.example.marketplace.profile.model.ProfileResponse
 import com.example.marketplace.register.model.RegisterRequest
 import com.example.marketplace.register.model.RegisterResponse
 import com.example.marketplace.timeline.model.ProductResponse
+import com.example.marketplace.update.model.UpdateRequest
+import com.example.marketplace.update.model.UpdateResponse
 import com.example.marketplace.utils.Constants
 import com.example.marketplace.utils.Constants.ADD_PRODUCT_URL
 import com.example.marketplace.utils.Constants.USER_INFO_URL
+import com.example.marketplace.utils.Constants.USER_UPDATE_URL
 import retrofit2.http.*
 
 interface MarketAPI {
@@ -37,4 +40,10 @@ interface MarketAPI {
 
     @GET(USER_INFO_URL)
     suspend fun getUserInfo(@Header("username") username: String): ProfileResponse
+
+    @POST(USER_UPDATE_URL)
+    suspend fun updateUser(
+        @Header("token") token: String,
+        @Body request: UpdateRequest
+    ): UpdateResponse
 }

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.marketplace.MyApplication
 import com.example.marketplace.R
 import com.example.marketplace.profile.viewmodel.Profile_ViewModel
@@ -44,9 +45,9 @@ class Profile_fragment : Fragment() {
             phone.text = it.phone_number
         }
 
-       // button.setOnClickListener {
-           // findNavController().navigate(R.id.action_profileFragment_to_settingsFragment)
-       // }
+        button.setOnClickListener {
+            findNavController().navigate(R.id.action_profile_fragment_to_update_fragment)
+        }
 
 
         return view

@@ -11,6 +11,8 @@ import com.example.marketplace.profile.model.ProfileResponse
 import com.example.marketplace.register.model.RegisterRequest
 import com.example.marketplace.register.model.RegisterResponse
 import com.example.marketplace.timeline.model.ProductResponse
+import com.example.marketplace.update.model.UpdateRequest
+import com.example.marketplace.update.model.UpdateResponse
 
 //import com.example.marketplace.model.ProductResponse
 
@@ -40,6 +42,10 @@ class Repository {
 
     suspend fun getUserInfo(username: String): ProfileResponse{
         return Retrofit_instance.api.getUserInfo(username)
+    }
+
+    suspend fun updateUser(token: String, request: UpdateRequest): UpdateResponse {
+        return Retrofit_instance.api.updateUser(token, request)
     }
 
 }

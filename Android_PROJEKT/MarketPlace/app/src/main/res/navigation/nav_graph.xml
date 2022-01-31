@@ -80,9 +80,22 @@
         android:id="@+id/profile_fragment"
         android:name="com.example.marketplace.profile.fragment.Profile_fragment"
         android:label="fragment_profile_fragment"
-        tools:layout="@layout/fragment_profile_fragment" />
+        tools:layout="@layout/fragment_profile_fragment" >
+        <action
+            android:id="@+id/action_profile_fragment_to_update_fragment"
+            app:destination="@id/update_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileOthers_fragment"
         android:name="com.example.marketplace.profile.fragment.ProfileOthers_fragment"
         android:label="ProfileOthers_fragment" />
+    <fragment
+        android:id="@+id/update_fragment"
+        android:name="com.example.marketplace.update.fragment.Update_fragment"
+        android:label="fragment_update_fragment"
+        tools:layout="@layout/fragment_update_fragment" >
+        <action
+            android:id="@+id/action_update_fragment_to_profile_fragment"
+            app:destination="@id/profile_fragment" />
+    </fragment>
 </navigation>
