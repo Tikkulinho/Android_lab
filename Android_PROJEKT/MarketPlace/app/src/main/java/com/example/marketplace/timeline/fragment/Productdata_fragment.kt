@@ -7,7 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.marketplace.R
+import com.example.marketplace.profile.viewmodel.Profile_ViewModel
+import com.example.marketplace.profile.viewmodel.Profile_ViewModelFactory
 import com.example.marketplace.repository.Repository
 import com.example.marketplace.timeline.model.Model_Timeline
 import com.example.marketplace.timeline.viewmodel.Timeline_ViewModel
@@ -16,10 +19,13 @@ import com.example.marketplace.timeline.viewmodel.Timeline_ViewModelFactory
 class Productdata_fragment : Fragment() {
 
     private lateinit var viewModel: Timeline_ViewModel
+    private lateinit var profileViewModel: Profile_ViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val factory = Timeline_ViewModelFactory(Repository())
+        val factoryprofile = Profile_ViewModelFactory(Repository())
         viewModel = ViewModelProvider(requireActivity(), factory).get(Timeline_ViewModel::class.java)
+        profileViewModel = ViewModelProvider(requireActivity(),factoryprofile).get(Profile_ViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -48,6 +54,12 @@ class Productdata_fragment : Fragment() {
         }
         description.text = productItem.description
         unit.text = productItem.units
+
+        seller.setOnClickListener {
+            profileViewModel.user.value!!.username = productItem.username
+            findNavController().navigate(R.id.action_productdata_fragment_to_profileOthers_fragment)
+        }
+
         return view
     }
 }

@@ -4,17 +4,17 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
-import com.example.marketplace.MyApplication
 import com.example.marketplace.R
 import com.example.marketplace.profile.viewmodel.Profile_ViewModel
 import com.example.marketplace.profile.viewmodel.Profile_ViewModelFactory
 import com.example.marketplace.repository.Repository
 
-class Profile_fragment : Fragment() {
+class ProfileOthers_fragment : Fragment() {
 
     private lateinit var viewModel: Profile_ViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,8 +34,7 @@ class Profile_fragment : Fragment() {
         val username = view.findViewById<TextView>(R.id.textView_actualprofileusername)
         val phone = view.findViewById<TextView>(R.id.textView_actualprofilephone)
         val button = view.findViewById<Button>(R.id.button_update)
-
-        viewModel.user.value!!.username = MyApplication.username
+        button.visibility = GONE
         viewModel.getUserInfo()
         viewModel.user.observe(viewLifecycleOwner){
             email.text = it.email
@@ -43,10 +42,6 @@ class Profile_fragment : Fragment() {
             username.text = it.username
             phone.text = it.phone_number
         }
-
-       // button.setOnClickListener {
-           // findNavController().navigate(R.id.action_profileFragment_to_settingsFragment)
-       // }
 
 
         return view

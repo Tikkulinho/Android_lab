@@ -71,10 +71,18 @@
         android:id="@+id/productdata_fragment"
         android:name="com.example.marketplace.timeline.fragment.Productdata_fragment"
         android:label="fragment_productdata_fragment"
-        tools:layout="@layout/fragment_productdata_fragment" />
+        tools:layout="@layout/fragment_productdata_fragment" >
+        <action
+            android:id="@+id/action_productdata_fragment_to_profileOthers_fragment"
+            app:destination="@id/profileOthers_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/profile_fragment"
         android:name="com.example.marketplace.profile.fragment.Profile_fragment"
         android:label="fragment_profile_fragment"
         tools:layout="@layout/fragment_profile_fragment" />
+    <fragment
+        android:id="@+id/profileOthers_fragment"
+        android:name="com.example.marketplace.profile.fragment.ProfileOthers_fragment"
+        android:label="ProfileOthers_fragment" />
 </navigation>
