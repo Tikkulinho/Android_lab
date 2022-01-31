@@ -5,11 +5,13 @@ import com.example.marketplace.forgotpassword.model.ForgotPasswordRequest
 import com.example.marketplace.forgotpassword.model.ForgotPasswordResponse
 import com.example.marketplace.login.model.LoginRequest
 import com.example.marketplace.login.model.LoginResponse
+import com.example.marketplace.profile.model.ProfileResponse
 import com.example.marketplace.register.model.RegisterRequest
 import com.example.marketplace.register.model.RegisterResponse
 import com.example.marketplace.timeline.model.ProductResponse
 import com.example.marketplace.utils.Constants
 import com.example.marketplace.utils.Constants.ADD_PRODUCT_URL
+import com.example.marketplace.utils.Constants.USER_INFO_URL
 import retrofit2.http.*
 
 interface MarketAPI {
@@ -32,4 +34,7 @@ interface MarketAPI {
         @Part("description") description: String?, @Part("price_per_unit") price_per_unit: String?,
         @Part("units") units: String?
     ): AddProductResponse
+
+    @GET(USER_INFO_URL)
+    suspend fun getUserInfo(@Header("username") username: String): ProfileResponse
 }

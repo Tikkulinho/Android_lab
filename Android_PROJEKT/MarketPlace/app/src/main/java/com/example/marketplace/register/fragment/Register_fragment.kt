@@ -35,6 +35,7 @@ class Register_fragment : Fragment() {
         val editText1: EditText = view.findViewById(R.id.editTextTextPersonName_username)
         val editText2: EditText = view.findViewById(R.id.editTextTextEmailAddress2)
         val editText3: EditText = view.findViewById(R.id.editTextTextPassword2)
+        val editText4: EditText = view.findViewById(R.id.editText_phonenumber)
         val button: Button = view.findViewById(R.id.button_register)
         button.setOnClickListener {
             registerViewModel.user.value.let {
@@ -46,6 +47,9 @@ class Register_fragment : Fragment() {
                 }
                 if (it != null) {
                     it.password = editText3.text.toString()
+                }
+                if (it != null) {
+                    it.phone_number = editText4.text.toString()
                 }
             }
             lifecycleScope.launch {

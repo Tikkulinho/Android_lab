@@ -7,4 +7,5 @@ object Constants {
     const val FORGOTPASSWORD_URL ="user/reset"
     const val GET_PRODUCT_URL ="products"
     const val ADD_PRODUCT_URL ="products/add"
+    const val USER_INFO_URL ="user/data"
 }

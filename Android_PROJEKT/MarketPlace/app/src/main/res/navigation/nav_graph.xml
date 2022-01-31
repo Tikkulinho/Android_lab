@@ -55,6 +55,9 @@
         <action
             android:id="@+id/action_mymarket_fragment_to_addProduct_fragment"
             app:destination="@id/addProduct_fragment" />
+        <action
+            android:id="@+id/action_mymarket_fragment_to_productdata_fragment"
+            app:destination="@id/productdata_fragment" />
     </fragment>
     <fragment
         android:id="@+id/addProduct_fragment"
@@ -69,4 +72,9 @@
         android:name="com.example.marketplace.timeline.fragment.Productdata_fragment"
         android:label="fragment_productdata_fragment"
         tools:layout="@layout/fragment_productdata_fragment" />
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.example.marketplace.profile.fragment.Profile_fragment"
+        android:label="fragment_profile_fragment"
+        tools:layout="@layout/fragment_profile_fragment" />
 </navigation>

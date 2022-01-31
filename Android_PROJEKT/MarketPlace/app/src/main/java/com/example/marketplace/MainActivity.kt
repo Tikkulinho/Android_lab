@@ -96,7 +96,10 @@ class MainActivity : AppCompatActivity() {
             })
             true
         }
-
+        R.id.action_profile -> {
+            findNavController(R.id.nav_host_fragment).navigate(R.id.profile_fragment)
+            true
+        }
         else -> {
             super.onOptionsItemSelected(item)
         }

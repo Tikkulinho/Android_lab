@@ -7,6 +7,7 @@ import com.example.marketplace.forgotpassword.model.ForgotPasswordRequest
 import com.example.marketplace.forgotpassword.model.ForgotPasswordResponse
 import com.example.marketplace.login.model.LoginRequest
 import com.example.marketplace.login.model.LoginResponse
+import com.example.marketplace.profile.model.ProfileResponse
 import com.example.marketplace.register.model.RegisterRequest
 import com.example.marketplace.register.model.RegisterResponse
 import com.example.marketplace.timeline.model.ProductResponse
@@ -36,4 +37,9 @@ class Repository {
     ): AddProductResponse {
         return Retrofit_instance.api.addProduct(token, title, description, price_per_unit, units)
     }
+
+    suspend fun getUserInfo(username: String): ProfileResponse{
+        return Retrofit_instance.api.getUserInfo(username)
+    }
+
 }
