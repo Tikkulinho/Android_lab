@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.marketplace.MyApplication
 import com.example.marketplace.User
 import com.example.marketplace.register.model.RegisterRequest
 import com.example.marketplace.repository.Repository
@@ -29,5 +28,4 @@ class Register_ViewModel(val repository: Repository) : ViewModel() {
             }
         }
     }
-
 }

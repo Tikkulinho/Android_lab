@@ -17,7 +17,6 @@ data class RegisterRequest (
     var phone_number: String
 )
 
-
 data class RegisterResponse (
     @SerializedName("code")
     var code: Int,

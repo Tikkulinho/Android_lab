@@ -22,7 +22,7 @@ class ForgotPassword_ViewModel (val repository: Repository) : ViewModel() {
                 ForgotPasswordRequest(username= user.value!!.username, email = user.value!!.email)
             try {
                 val result = repository.forgotpassword(request)
-                Log.d("xxx", "Register")
+                Log.d("xxx", "Forgotpassword")
             }catch(e: Exception){
                 Log.d("xxx", "MainViewModel - exception: ${e.toString()}")
             }

@@ -1,10 +1,8 @@
 package com.example.marketplace.timeline.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marketplace.R
@@ -28,9 +26,9 @@ class Timeline_Adapter (
     // 1. user defined ViewHolder type - Embedded class!
     inner class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener, View.OnLongClickListener {
-        val textView_name: TextView = itemView.findViewById(R.id.productNameTextViewSales)
-        val textView_price: TextView = itemView.findViewById(R.id.TextView_price)
-        val textView_seller: TextView = itemView.findViewById(R.id.sellerTextViewSales)
+        val textView_name: TextView = itemView.findViewById(R.id.textView_productnamesales)
+        val textView_price: TextView = itemView.findViewById(R.id.textView_priceitemlayout)
+        val textView_seller: TextView = itemView.findViewById(R.id.textView_sellersales)
 
         init{
             itemView.setOnClickListener(this)

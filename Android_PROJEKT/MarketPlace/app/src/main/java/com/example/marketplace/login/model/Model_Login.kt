@@ -11,7 +11,6 @@ data class LoginRequest (
     var password: String
 )
 
-
 data class LoginResponse (
     @SerializedName("username")
     var username: String,

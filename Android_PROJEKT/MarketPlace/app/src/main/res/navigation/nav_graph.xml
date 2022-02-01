@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/login_fragment"
         android:name="com.example.marketplace.login.fragment.Login_fragment"
-        android:label="fragment_login_fragment"
+        android:label="Bazaar"
         tools:layout="@layout/fragment_login_fragment" >
         <action
             android:id="@+id/action_login_fragment_to_register_fragment"
@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/register_fragment"
         android:name="com.example.marketplace.register.fragment.Register_fragment"
-        android:label="fragment_register_fragment"
+        android:label="Bazaar"
         tools:layout="@layout/fragment_register_fragment" >
         <action
             android:id="@+id/action_register_fragment_to_login_fragment"
@@ -32,7 +32,7 @@
     <fragment
         android:id="@+id/forgotpassword_fragment"
         android:name="com.example.marketplace.forgotpassword.fragment.ForgotPassword_fragment"
-        android:label="fragment_forgotpassword_fragment"
+        android:label="Bazaar"
         tools:layout="@layout/fragment_forgotpassword_fragment" >
         <action
             android:id="@+id/action_forgotpassword_fragment_to_login_fragment"
@@ -41,7 +41,7 @@
     <fragment
         android:id="@+id/timeline_fragment"
         android:name="com.example.marketplace.timeline.fragment.Timeline_fragment"
-        android:label="fragment_timeline_fragment"
+        android:label="Bazaar"
         tools:layout="@layout/fragment_timeline_fragment" >
         <action
             android:id="@+id/action_timeline_fragment_to_productdata_fragment"
@@ -50,7 +50,7 @@
     <fragment
         android:id="@+id/mymarket_fragment"
         android:name="com.example.marketplace.mymarket.fragment.mymarket_fragment"
-        android:label="fragment_mymarket_fragment"
+        android:label="Bazaar"
         tools:layout="@layout/fragment_mymarket_fragment" >
         <action
             android:id="@+id/action_mymarket_fragment_to_addProduct_fragment"
@@ -62,7 +62,7 @@
     <fragment
         android:id="@+id/addProduct_fragment"
         android:name="com.example.marketplace.addproduct.fragment.AddProduct_fragment"
-        android:label="AddProduct_fragment" >
+        android:label="Bazaar" >
         <action
             android:id="@+id/action_addProduct_fragment_to_mymarket_fragment"
             app:destination="@id/mymarket_fragment" />
@@ -70,7 +70,7 @@
     <fragment
         android:id="@+id/productdata_fragment"
         android:name="com.example.marketplace.timeline.fragment.Productdata_fragment"
-        android:label="fragment_productdata_fragment"
+        android:label="Bazaar"
         tools:layout="@layout/fragment_productdata_fragment" >
         <action
             android:id="@+id/action_productdata_fragment_to_profileOthers_fragment"
@@ -79,7 +79,7 @@
     <fragment
         android:id="@+id/profile_fragment"
         android:name="com.example.marketplace.profile.fragment.Profile_fragment"
-        android:label="fragment_profile_fragment"
+        android:label="Bazaar"
         tools:layout="@layout/fragment_profile_fragment" >
         <action
             android:id="@+id/action_profile_fragment_to_update_fragment"
@@ -88,11 +88,11 @@
     <fragment
         android:id="@+id/profileOthers_fragment"
         android:name="com.example.marketplace.profile.fragment.ProfileOthers_fragment"
-        android:label="ProfileOthers_fragment" />
+        android:label="Bazaar" />
     <fragment
         android:id="@+id/update_fragment"
         android:name="com.example.marketplace.update.fragment.Update_fragment"
-        android:label="fragment_update_fragment"
+        android:label="Bazaar"
         tools:layout="@layout/fragment_update_fragment" >
         <action
             android:id="@+id/action_update_fragment_to_profile_fragment"

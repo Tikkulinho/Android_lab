@@ -1,6 +1,5 @@
 package com.example.marketplace.login.viewmodel
 
-import android.content.Context
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -21,8 +20,7 @@ class Login_ViewModel(val repository: Repository) : ViewModel() {
 
     fun login() {
         viewModelScope.launch {
-            val request =
-                LoginRequest(username = user.value!!.username, password = user.value!!.password)
+            val request = LoginRequest(username = user.value!!.username, password = user.value!!.password)
             try {
                 val result = repository.login(request)
                 MyApplication.token = result.token
@@ -34,5 +32,4 @@ class Login_ViewModel(val repository: Repository) : ViewModel() {
             }
         }
     }
-
 }

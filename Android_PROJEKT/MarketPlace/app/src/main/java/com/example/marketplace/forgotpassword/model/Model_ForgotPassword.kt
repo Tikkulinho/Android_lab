@@ -9,9 +9,7 @@ data class ForgotPasswordRequest (
 
     @SerializedName("email")
     var email: String,
-
 )
-
 
 data class ForgotPasswordResponse (
     @SerializedName("code")
