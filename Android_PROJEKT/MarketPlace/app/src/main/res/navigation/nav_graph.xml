@@ -75,6 +75,9 @@
         <action
             android:id="@+id/action_productdata_fragment_to_profileOthers_fragment"
             app:destination="@id/profileOthers_fragment" />
+        <action
+            android:id="@+id/action_productdata_fragment_to_productUpdate_fragment"
+            app:destination="@id/productUpdate_fragment" />
     </fragment>
     <fragment
         android:id="@+id/profile_fragment"
@@ -97,5 +100,13 @@
         <action
             android:id="@+id/action_update_fragment_to_profile_fragment"
             app:destination="@id/profile_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productUpdate_fragment"
+        android:name="com.example.marketplace.productupdate.fragment.ProductUpdate_fragment"
+        android:label="Bazaar" >
+        <action
+            android:id="@+id/action_productUpdate_fragment_to_productdata_fragment"
+            app:destination="@id/productdata_fragment" />
     </fragment>
 </navigation>

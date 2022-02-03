@@ -54,7 +54,7 @@ class mymarket_fragment : Fragment() , mymarket_Adapter.OnItemClickListener, mym
         button.setOnClickListener {
             findNavController().navigate(R.id.action_mymarket_fragment_to_addProduct_fragment)
         }
-
+        Log.d("xxx", "Product id: ${mymarketViewModel.products.value!![0].product_id}")
         return view
     }
 

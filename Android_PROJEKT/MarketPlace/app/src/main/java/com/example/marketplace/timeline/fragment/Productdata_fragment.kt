@@ -4,10 +4,13 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.marketplace.MyApplication
 import com.example.marketplace.R
 import com.example.marketplace.profile.viewmodel.Profile_ViewModel
 import com.example.marketplace.profile.viewmodel.Profile_ViewModelFactory
@@ -58,6 +61,14 @@ class Productdata_fragment : Fragment() {
         seller.setOnClickListener {
             profileViewModel.user.value!!.username = productItem.username
             findNavController().navigate(R.id.action_productdata_fragment_to_profileOthers_fragment)
+        }
+
+        val button = view.findViewById<Button>(R.id.button_updateproductinfo)
+        if(seller.text != MyApplication.username){
+            button.visibility = GONE
+        }
+        button.setOnClickListener(){
+            findNavController().navigate(R.id.action_productdata_fragment_to_productUpdate_fragment)
         }
 
         return view

@@ -5,6 +5,8 @@ import com.example.marketplace.forgotpassword.model.ForgotPasswordRequest
 import com.example.marketplace.forgotpassword.model.ForgotPasswordResponse
 import com.example.marketplace.login.model.LoginRequest
 import com.example.marketplace.login.model.LoginResponse
+import com.example.marketplace.productupdate.model.ProductUpdateRequest
+import com.example.marketplace.productupdate.model.ProductUpdateResponse
 import com.example.marketplace.profile.model.ProfileResponse
 import com.example.marketplace.register.model.RegisterRequest
 import com.example.marketplace.register.model.RegisterResponse
@@ -13,6 +15,7 @@ import com.example.marketplace.update.model.UpdateRequest
 import com.example.marketplace.update.model.UpdateResponse
 import com.example.marketplace.utils.Constants
 import com.example.marketplace.utils.Constants.ADD_PRODUCT_URL
+import com.example.marketplace.utils.Constants.PRODUCT_UPDATE_URL
 import com.example.marketplace.utils.Constants.USER_INFO_URL
 import com.example.marketplace.utils.Constants.USER_UPDATE_URL
 import retrofit2.http.*
@@ -46,4 +49,11 @@ interface MarketAPI {
         @Header("token") token: String,
         @Body request: UpdateRequest
     ): UpdateResponse
+
+    @POST(PRODUCT_UPDATE_URL)
+    suspend fun productUpdate(
+        @Header("token") token: String,
+        @Query("product_id") product_id: String,
+        @Body request: ProductUpdateRequest
+    ): ProductUpdateResponse
 }

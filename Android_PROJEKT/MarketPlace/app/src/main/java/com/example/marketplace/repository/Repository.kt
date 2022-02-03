@@ -7,6 +7,8 @@ import com.example.marketplace.forgotpassword.model.ForgotPasswordRequest
 import com.example.marketplace.forgotpassword.model.ForgotPasswordResponse
 import com.example.marketplace.login.model.LoginRequest
 import com.example.marketplace.login.model.LoginResponse
+import com.example.marketplace.productupdate.model.ProductUpdateRequest
+import com.example.marketplace.productupdate.model.ProductUpdateResponse
 import com.example.marketplace.profile.model.ProfileResponse
 import com.example.marketplace.register.model.RegisterRequest
 import com.example.marketplace.register.model.RegisterResponse
@@ -46,6 +48,10 @@ class Repository {
 
     suspend fun updateUser(token: String, request: UpdateRequest): UpdateResponse {
         return Retrofit_instance.api.updateUser(token, request)
+    }
+
+    suspend fun productUpdate(token :String, product_id: String, request: ProductUpdateRequest) : ProductUpdateResponse {
+        return Retrofit_instance.api.productUpdate(token,product_id, request)
     }
 
 }
