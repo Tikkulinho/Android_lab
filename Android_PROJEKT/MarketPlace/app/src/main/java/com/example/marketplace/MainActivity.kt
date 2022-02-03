@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                     findNavController(R.id.nav_host_fragment).navigate(R.id.mymarket_fragment)
                 }
                 R.id.menu_myfare -> {
-                    //findNavController(R.id.nav_host_fragment).navigate(R.id.myFareFragment)
+                    findNavController(R.id.nav_host_fragment).navigate(R.id.myfare_fragment)
                 }
 
             }
@@ -60,6 +60,18 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.actionbar, menu)
+        var item: MenuItem = menu.findItem(R.id.action_filter)
+        var item2: MenuItem = menu.findItem(R.id.action_search)
+        var item3: MenuItem = menu.findItem(R.id.action_profile)
+        val navController2 = findNavController(R.id.nav_host_fragment)
+        navController2.addOnDestinationChangedListener { _, destination, _ ->
+            if(destination.id == R.id.register_fragment || destination.id == R.id.forgotpassword_fragment || destination.id == R.id.login_fragment) {
+                item.setVisible(false)
+                item2.setVisible(false)
+                item3.setVisible(false)
+            }
+        }
+
         return super.onCreateOptionsMenu(menu)
     }
 

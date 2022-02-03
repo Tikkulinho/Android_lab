@@ -2,11 +2,14 @@ package com.example.marketplace.repository
 
 import android.util.Log
 import com.example.marketplace.API.Retrofit_instance
+import com.example.marketplace.addorder.model.AddOrderRequest
+import com.example.marketplace.addorder.model.AddOrderResponse
 import com.example.marketplace.addproduct.model.AddProductResponse
 import com.example.marketplace.forgotpassword.model.ForgotPasswordRequest
 import com.example.marketplace.forgotpassword.model.ForgotPasswordResponse
 import com.example.marketplace.login.model.LoginRequest
 import com.example.marketplace.login.model.LoginResponse
+import com.example.marketplace.myfares.model.MyFareResponse
 import com.example.marketplace.productremove.model.RemoveResponse
 import com.example.marketplace.productupdate.model.ProductUpdateRequest
 import com.example.marketplace.productupdate.model.ProductUpdateResponse
@@ -56,6 +59,14 @@ class Repository {
 
     suspend fun productRemove(token:String, product_id:String): RemoveResponse {
         return Retrofit_instance.api.productRemove(token,product_id)
+    }
+
+    suspend fun myFareOrder(token:String): MyFareResponse {
+        return Retrofit_instance.api.myFareOrder(token)
+    }
+
+    suspend fun addOrder(token:String, request: AddOrderRequest): AddOrderResponse{
+        return Retrofit_instance.api.addOrder(token, request)
     }
 
 }

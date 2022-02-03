@@ -1,10 +1,13 @@
 package com.example.marketplace.API
 
+import com.example.marketplace.addorder.model.AddOrderRequest
+import com.example.marketplace.addorder.model.AddOrderResponse
 import com.example.marketplace.addproduct.model.AddProductResponse
 import com.example.marketplace.forgotpassword.model.ForgotPasswordRequest
 import com.example.marketplace.forgotpassword.model.ForgotPasswordResponse
 import com.example.marketplace.login.model.LoginRequest
 import com.example.marketplace.login.model.LoginResponse
+import com.example.marketplace.myfares.model.MyFareResponse
 import com.example.marketplace.productremove.model.RemoveResponse
 import com.example.marketplace.productupdate.model.ProductUpdateRequest
 import com.example.marketplace.productupdate.model.ProductUpdateResponse
@@ -15,7 +18,9 @@ import com.example.marketplace.timeline.model.ProductResponse
 import com.example.marketplace.update.model.UpdateRequest
 import com.example.marketplace.update.model.UpdateResponse
 import com.example.marketplace.utils.Constants
+import com.example.marketplace.utils.Constants.ADD_ORDER_URL
 import com.example.marketplace.utils.Constants.ADD_PRODUCT_URL
+import com.example.marketplace.utils.Constants.ORDER_URL
 import com.example.marketplace.utils.Constants.PRODUCT_REMOVE_URL
 import com.example.marketplace.utils.Constants.PRODUCT_UPDATE_URL
 import com.example.marketplace.utils.Constants.USER_INFO_URL
@@ -75,4 +80,15 @@ interface MarketAPI {
         @Header("token") token: String,
         @Query("product_id") product_id: String
     ) : RemoveResponse
+
+    @GET(ORDER_URL)
+    suspend fun myFareOrder(
+        @Header("token") token: String
+    ): MyFareResponse
+
+    @POST(ADD_ORDER_URL)
+    suspend fun addOrder(
+        @Header("token") token: String,
+        @Body request: AddOrderRequest
+    ) : AddOrderResponse
 }

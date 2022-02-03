@@ -81,6 +81,9 @@
         <action
             android:id="@+id/action_productdata_fragment_to_mymarket_fragment"
             app:destination="@id/mymarket_fragment" />
+        <action
+            android:id="@+id/action_productdata_fragment_to_myfare_fragment"
+            app:destination="@id/myfare_fragment" />
     </fragment>
     <fragment
         android:id="@+id/profile_fragment"
@@ -112,4 +115,9 @@
             android:id="@+id/action_productUpdate_fragment_to_productdata_fragment"
             app:destination="@id/productdata_fragment" />
     </fragment>
+    <fragment
+        android:id="@+id/myfare_fragment"
+        android:name="com.example.marketplace.myfares.fragment.Myfare_fragment"
+        android:label="fragment_myfare_fragment"
+        tools:layout="@layout/fragment_myfare_fragment" />
 </navigation>
