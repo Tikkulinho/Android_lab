@@ -10,4 +10,5 @@ object Constants {
     const val USER_INFO_URL ="user/data"
     const val USER_UPDATE_URL ="user/update"
     const val PRODUCT_UPDATE_URL = "products/update"
+    const val PRODUCT_REMOVE_URL = "products/remove"
 }

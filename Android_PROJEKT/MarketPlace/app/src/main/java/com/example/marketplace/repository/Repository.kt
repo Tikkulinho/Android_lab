@@ -7,6 +7,7 @@ import com.example.marketplace.forgotpassword.model.ForgotPasswordRequest
 import com.example.marketplace.forgotpassword.model.ForgotPasswordResponse
 import com.example.marketplace.login.model.LoginRequest
 import com.example.marketplace.login.model.LoginResponse
+import com.example.marketplace.productremove.model.RemoveResponse
 import com.example.marketplace.productupdate.model.ProductUpdateRequest
 import com.example.marketplace.productupdate.model.ProductUpdateResponse
 import com.example.marketplace.profile.model.ProfileResponse
@@ -16,7 +17,6 @@ import com.example.marketplace.timeline.model.ProductResponse
 import com.example.marketplace.update.model.UpdateRequest
 import com.example.marketplace.update.model.UpdateResponse
 
-//import com.example.marketplace.model.ProductResponse
 
 class Repository {
     suspend fun login(request: LoginRequest): LoginResponse {
@@ -52,6 +52,10 @@ class Repository {
 
     suspend fun productUpdate(token :String, product_id: String, request: ProductUpdateRequest) : ProductUpdateResponse {
         return Retrofit_instance.api.productUpdate(token,product_id, request)
+    }
+
+    suspend fun productRemove(token:String, product_id:String): RemoveResponse {
+        return Retrofit_instance.api.productRemove(token,product_id)
     }
 
 }

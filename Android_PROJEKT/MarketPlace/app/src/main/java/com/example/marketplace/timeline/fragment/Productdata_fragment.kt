@@ -12,6 +12,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.marketplace.MyApplication
 import com.example.marketplace.R
+import com.example.marketplace.productupdate.viewmodel.ProductUpdate_ViewModel
+import com.example.marketplace.productupdate.viewmodel.ProductUpdate_ViewModelFactory
 import com.example.marketplace.profile.viewmodel.Profile_ViewModel
 import com.example.marketplace.profile.viewmodel.Profile_ViewModelFactory
 import com.example.marketplace.repository.Repository
@@ -23,12 +25,16 @@ class Productdata_fragment : Fragment() {
 
     private lateinit var viewModel: Timeline_ViewModel
     private lateinit var profileViewModel: Profile_ViewModel
+    private lateinit var updateproductViewModel: ProductUpdate_ViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val factory = Timeline_ViewModelFactory(Repository())
         val factoryprofile = Profile_ViewModelFactory(Repository())
+        val factoryproductupdate = ProductUpdate_ViewModelFactory(Repository())
         viewModel = ViewModelProvider(requireActivity(), factory).get(Timeline_ViewModel::class.java)
         profileViewModel = ViewModelProvider(requireActivity(),factoryprofile).get(Profile_ViewModel::class.java)
+        updateproductViewModel = ViewModelProvider(requireActivity(), factoryproductupdate).get(ProductUpdate_ViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -64,13 +70,20 @@ class Productdata_fragment : Fragment() {
         }
 
         val button = view.findViewById<Button>(R.id.button_updateproductinfo)
+        val button2 = view.findViewById<Button>(R.id.button_removeproduct)
         if(seller.text != MyApplication.username){
             button.visibility = GONE
+            button2.visibility = GONE
         }
         button.setOnClickListener(){
+            updateproductViewModel.product.value!!.product_id = productItem.product_id
             findNavController().navigate(R.id.action_productdata_fragment_to_productUpdate_fragment)
         }
-
+        button2.setOnClickListener(){
+            viewModel.productRemove()
+            viewModel.getProducts()
+            findNavController().navigate(R.id.action_productdata_fragment_to_mymarket_fragment)
+        }
         return view
     }
 }

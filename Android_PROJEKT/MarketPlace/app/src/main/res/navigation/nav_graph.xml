@@ -78,6 +78,9 @@
         <action
             android:id="@+id/action_productdata_fragment_to_productUpdate_fragment"
             app:destination="@id/productUpdate_fragment" />
+        <action
+            android:id="@+id/action_productdata_fragment_to_mymarket_fragment"
+            app:destination="@id/mymarket_fragment" />
     </fragment>
     <fragment
         android:id="@+id/profile_fragment"

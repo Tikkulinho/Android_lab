@@ -5,6 +5,7 @@ import com.example.marketplace.forgotpassword.model.ForgotPasswordRequest
 import com.example.marketplace.forgotpassword.model.ForgotPasswordResponse
 import com.example.marketplace.login.model.LoginRequest
 import com.example.marketplace.login.model.LoginResponse
+import com.example.marketplace.productremove.model.RemoveResponse
 import com.example.marketplace.productupdate.model.ProductUpdateRequest
 import com.example.marketplace.productupdate.model.ProductUpdateResponse
 import com.example.marketplace.profile.model.ProfileResponse
@@ -15,6 +16,7 @@ import com.example.marketplace.update.model.UpdateRequest
 import com.example.marketplace.update.model.UpdateResponse
 import com.example.marketplace.utils.Constants
 import com.example.marketplace.utils.Constants.ADD_PRODUCT_URL
+import com.example.marketplace.utils.Constants.PRODUCT_REMOVE_URL
 import com.example.marketplace.utils.Constants.PRODUCT_UPDATE_URL
 import com.example.marketplace.utils.Constants.USER_INFO_URL
 import com.example.marketplace.utils.Constants.USER_UPDATE_URL
@@ -22,16 +24,25 @@ import retrofit2.http.*
 
 interface MarketAPI {
     @POST(Constants.LOGIN_URL)
-    suspend fun login(@Body request: LoginRequest): LoginResponse
+    suspend fun login(
+        @Body request: LoginRequest
+    ): LoginResponse
 
     @POST(Constants.REGISTER_URL)
-    suspend fun register(@Body request: RegisterRequest): RegisterResponse
+    suspend fun register(
+        @Body request: RegisterRequest
+    ): RegisterResponse
 
     @POST(Constants.FORGOTPASSWORD_URL)
-    suspend fun forgotpassword(@Body request: ForgotPasswordRequest): ForgotPasswordResponse
+    suspend fun forgotpassword(
+        @Body request: ForgotPasswordRequest
+    ): ForgotPasswordResponse
 
     @GET(Constants.GET_PRODUCT_URL)
-    suspend fun getProducts(@Header("token") token: String, @Header("limit") limit: Int = 1000): ProductResponse
+    suspend fun getProducts(
+        @Header("token") token: String,
+        @Header("limit") limit: Int = 1000
+    ): ProductResponse
 
     @Multipart
     @POST(ADD_PRODUCT_URL)
@@ -42,7 +53,9 @@ interface MarketAPI {
     ): AddProductResponse
 
     @GET(USER_INFO_URL)
-    suspend fun getUserInfo(@Header("username") username: String): ProfileResponse
+    suspend fun getUserInfo(
+        @Header("username") username: String
+    ): ProfileResponse
 
     @POST(USER_UPDATE_URL)
     suspend fun updateUser(
@@ -56,4 +69,10 @@ interface MarketAPI {
         @Query("product_id") product_id: String,
         @Body request: ProductUpdateRequest
     ): ProductUpdateResponse
+
+    @POST(PRODUCT_REMOVE_URL)
+    suspend fun productRemove(
+        @Header("token") token: String,
+        @Query("product_id") product_id: String
+    ) : RemoveResponse
 }
